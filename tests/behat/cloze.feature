@@ -36,7 +36,7 @@ Feature: Atto cloze editor button
     And I click on "Cloze editor" "button"
     And I click on "SHORTANSWER" "text" in the "Cloze editor" "dialogue"
     Then I should see "Allows a response"
-    And I click on "Add" "button" in the "Cloze editor" "dialogue"
+    And I click on "//button[contains(concat(' ', normalize-space(@class), ' '), ' atto_cloze_submit ')]" "xpath_element"
     Then I should not see "NUMERICAL"
     And I set the field with xpath "//input[contains(concat(' ', normalize-space(@class), ' '), ' atto_cloze_feedback ')]" to "Funny"
     And I click on "Insert" "button" in the "Cloze editor" "dialogue"
