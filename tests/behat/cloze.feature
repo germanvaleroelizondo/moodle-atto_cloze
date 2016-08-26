@@ -38,6 +38,7 @@ Feature: Atto cloze editor button
     And I click on "SHORTANSWER" "radio" in the "Cloze editor" "dialogue"
     And I click on "Add" "button" in the "Cloze editor" "dialogue"
     And I wait "60" seconds
+    Then I should not see "NUMERICAL"
     And I set the field with xpath "//input[contains(concat(' ', normalize-space(@class), ' '), ' atto_cloze_feedback ')]" to "Funny"
     And I click on "Insert" "button" in the "Cloze editor" "dialogue"
     Then I should see "{1:SHORTANSWER:~%100%Bunny#Funny}"
@@ -50,6 +51,7 @@ Feature: Atto cloze editor button
     And I click on "MULTICHOICE" "radio" in the "Cloze editor" "dialogue"
     And I click on "Add" "button" in the "Cloze editor" "dialogue"
     And I wait "60" seconds
+    Then I should not see "NUMERICAL"
     And I click on "Add another answer blank" "button" in the "Cloze editor" "dialogue"
     And I click on "Add another answer blank" "button" in the "Cloze editor" "dialogue"
     And I set the field with xpath "//div[@class='atto_cloze']//input[contains(concat(' ', normalize-space(@class), ' '), ' atto_cloze_answer ')]" to "Three"
@@ -68,6 +70,7 @@ Feature: Atto cloze editor button
     And I click on "NUMERICAL" "radio" in the "Cloze editor" "dialogue"
     And I click on "Add" "button" in the "Cloze editor" "dialogue"
     And I wait "60" seconds
+    Then I should not see "NUMERICAL"
     And I set the field with xpath "//div[@class='atto_cloze']//li[1]//input[contains(concat(' ', normalize-space(@class), ' '), ' atto_cloze_answer ')]" to "3"
     And I set the field with xpath "//div[@class='atto_cloze']//li[1]//input[contains(concat(' ', normalize-space(@class), ' '), ' atto_cloze_tolerance ')]" to "0.5"
     And I set the field with xpath "//input[contains(concat(' ', normalize-space(@class), ' '), ' atto_cloze_feedback ')]" to "Three is correct"
