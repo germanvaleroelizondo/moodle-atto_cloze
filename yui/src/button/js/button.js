@@ -316,9 +316,10 @@ Y.namespace('M.atto_cloze').Button = Y.Base.create('button', Y.M.editor_atto.Edi
     _choiceHandler: function(e) {
         e.preventDefault();
         this._qtype = 'SHORTANSWER';
-        var qtype = this._form.one('form').getDOMNode().qtype;
-        if (qtype && qtype.value) {
-            this._qtype = qtype.value;
+        //var qtype = this._form.one('form').getDOMNode().qtype;
+        var qtype = this._form.one('input[name=qtype]:checked');
+        if (qtype) {
+            this._qtype = qtype.get('value');
         }
         if (e && e.currentTarget && e.currentTarget.hasClass(CSS.SUBMIT)) {
             this._answerdata = [
