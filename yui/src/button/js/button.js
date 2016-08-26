@@ -330,7 +330,8 @@ Y.namespace('M.atto_cloze').Button = Y.Base.create('button', Y.M.editor_atto.Edi
                 }
             ];
         }
-        this._dialogue.set('bodyContent', this._getDialogueContent(e, this._qtype));
+            this._qtype = 'SHORTANSWER';
+        this._dialogue.set('bodyContent', this._getDialogueContent(e, 'SHORTANSWER'));
         this._form.one('.' + CSS.ANSWER).focus();
     },
 
