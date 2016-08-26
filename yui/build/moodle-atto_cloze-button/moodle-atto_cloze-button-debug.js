@@ -317,6 +317,7 @@ Y.namespace('M.atto_cloze').Button = Y.Base.create('button', Y.M.editor_atto.Edi
      */
     _choiceHandler: function(e) {
         e.preventDefault();
+        this._qtype = 'SHORTANSWER';
         var qtype = this._form.one('form').getDOMNode().qtype;
         if (qtype && qtype.value) {
             this._qtype = qtype.value;
@@ -332,8 +333,7 @@ Y.namespace('M.atto_cloze').Button = Y.Base.create('button', Y.M.editor_atto.Edi
                 }
             ];
         }
-            this._qtype = 'SHORTANSWER';
-        this._dialogue.set('bodyContent', this._getDialogueContent(e, 'SHORTANSWER'));
+        this._dialogue.set('bodyContent', this._getDialogueContent(e, this._qtype));
         this._form.one('.' + CSS.ANSWER).focus();
     },
 
