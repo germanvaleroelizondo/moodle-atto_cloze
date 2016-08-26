@@ -35,6 +35,7 @@ Feature: Atto cloze editor button
     And I select the text in the "Question text" Atto editor
     And I click on "Cloze editor" "button"
     And I click on "SHORTANSWER" "text" in the "Cloze editor" "dialogue"
+    Then I should see "Allows a response"
     And I click on "Add" "button" in the "Cloze editor" "dialogue"
     Then I should not see "NUMERICAL"
     And I set the field with xpath "//input[contains(concat(' ', normalize-space(@class), ' '), ' atto_cloze_feedback ')]" to "Funny"
@@ -47,6 +48,7 @@ Feature: Atto cloze editor button
     And I set the field "Question text" to "<p> blind mice.</p>"
     And I click on "Cloze editor" "button"
     And I click on "MULTICHOICE" "text" in the "Cloze editor" "dialogue"
+    Then I should see "Allows the selection of a single"
     And I click on "Add" "button" in the "Cloze editor" "dialogue"
     Then I should not see "NUMERICAL"
     And I click on "Add another answer blank" "button" in the "Cloze editor" "dialogue"
